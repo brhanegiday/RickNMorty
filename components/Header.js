@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { MdDarkMode } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
+import { CharacterConsumer } from "../context/CharacterContext";
 
 const Container = styled.div`
   background-color: #fff;
@@ -42,32 +43,36 @@ const ThemeModeContainer = styled.div`
   cursor: pointer;
 `;
 function Header() {
-  const [search, setSearch] = useState("");
   return (
-    <Container>
-      <HeaderContainer>
-        <Image
-          src="/images/Rick_and_Morty.png"
-          alt="Header Logo"
-          width={120}
-          height={40}
-        />
-        <InputWrapper>
-          <AiOutlineSearch style={{ position: "absolute", left: "1rem" }} />
-          <Input
-            type="text"
-            placeholder="Search Characters"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </InputWrapper>
+    <CharacterConsumer>
+      {(value) => (
+        <Container>
+          <HeaderContainer>
+            <Image
+              src="/images/Rick_and_Morty.png"
+              alt="Header Logo"
+              width={120}
+              height={40}
+            />
+            <InputWrapper>
+              <AiOutlineSearch style={{ position: "absolute", left: "1rem" }} />
+              <Input
+                type="text"
+                placeholder="Search Characters"
+                value={value.searchTerm}
+                onChange={value.handleOnChange}
+                ref={value.inputEl}
+              />
+            </InputWrapper>
 
-        <ThemeModeContainer>
-          <MdDarkMode />
-          <p style={{ fontSize: "0.8rem" }}>Dark Mode</p>
-        </ThemeModeContainer>
-      </HeaderContainer>
-    </Container>
+            <ThemeModeContainer>
+              <MdDarkMode />
+              <p style={{ fontSize: "0.8rem" }}>Dark Mode</p>
+            </ThemeModeContainer>
+          </HeaderContainer>
+        </Container>
+      )}
+    </CharacterConsumer>
   );
 }
 
