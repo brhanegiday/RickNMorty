@@ -8,6 +8,27 @@ export const characters = [
     origin: "Earth (C-137)",
     species: "Human",
     likes: false,
+    numEpisodes: 40,
+    episodeList: [
+      {
+        id: uuidv4(),
+        date: "December 2, 2013",
+        episodeDesc: "Pilot",
+        episodeTitle: "S01E01",
+      },
+      {
+        id: uuidv4(),
+        episodeTitle: "Pilot",
+        date: "December 2, 2013",
+        episodeTitle: "S01E02",
+      },
+      {
+        id: uuidv4(),
+        episodeTitle: "Pilot",
+        date: "December 2, 2013",
+        episodeTitle: "S01E02",
+      },
+    ],
   },
   {
     id: uuidv4(),
@@ -16,6 +37,7 @@ export const characters = [
     origin: "Earth (C-137)",
     species: "Human",
     likes: false,
+    numEpisodes: 40,
   },
   {
     id: uuidv4(),
@@ -24,6 +46,7 @@ export const characters = [
     origin: "Earth (C-137)",
     species: "Human",
     likes: false,
+    numEpisodes: 40,
   },
   {
     id: uuidv4(),
@@ -32,6 +55,7 @@ export const characters = [
     origin: "Earth (C-137)",
     species: "Human",
     likes: false,
+    numEpisodes: 40,
   },
   {
     id: uuidv4(),
@@ -40,6 +64,7 @@ export const characters = [
     origin: "Earth (C-137)",
     species: "Human",
     likes: false,
+    numEpisodes: 40,
   },
   {
     id: uuidv4(),
@@ -48,5 +73,6 @@ export const characters = [
     origin: "Earth (C-137)",
     species: "Human",
     likes: false,
+    numEpisodes: 40,
   },
 ];

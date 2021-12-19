@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BsArrowRightShort } from "react-icons/bs";
+import CharModal from "./CharModal";
 
 const Wrapper = styled.div`
   display: flex;
@@ -56,7 +57,12 @@ const SpeciesText = styled.div`
   padding-top: 0.3rem;
 `;
 
-function Character({ character, handleLikeButton, handleUnLikeButton }) {
+function Character({
+  character,
+  handleLikeButton,
+  handleUnLikeButton,
+  handleModal,
+}) {
   const [likeButton, setLikeButton] = useState(false);
 
   return (
@@ -67,7 +73,6 @@ function Character({ character, handleLikeButton, handleUnLikeButton }) {
         width={120}
         height={150}
       />
-
       <div>
         <LeftItem>
           <CharacterName>{character.characterName}</CharacterName>
@@ -103,7 +108,7 @@ function Character({ character, handleLikeButton, handleUnLikeButton }) {
         </MiddleItem>
         <RightItem>
           <div></div>
-          <Button>
+          <Button onClick={() => handleModal(character.id)}>
             <div style={{ fontSize: "0.7rem" }}> See Episods</div>{" "}
             <BsArrowRightShort style={{ fontSize: "1.3rem" }} />
           </Button>
@@ -114,4 +119,3 @@ function Character({ character, handleLikeButton, handleUnLikeButton }) {
 }
 
 export default Character;
-Character;

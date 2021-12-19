@@ -22,6 +22,9 @@ function CharacterList() {
               key={character.id}
               handleLikeButton={value.handleLikeButton}
               handleUnLikeButton={value.handleUnLikeButton}
+              handleModal={value.handleModal}
+              openModal={value.openModal}
+              characterModal={value.characterModal}
             />
           ))}
         </GridContainer>
