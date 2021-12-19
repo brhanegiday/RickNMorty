@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { MdDarkMode } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
+
 const Container = styled.div`
   background-color: #fff;
   height: 4rem;
@@ -41,6 +42,7 @@ const ThemeModeContainer = styled.div`
   cursor: pointer;
 `;
 function Header() {
+  const [search, setSearch] = useState("");
   return (
     <Container>
       <HeaderContainer>
@@ -52,7 +54,12 @@ function Header() {
         />
         <InputWrapper>
           <AiOutlineSearch style={{ position: "absolute", left: "1rem" }} />
-          <Input type="text" placeholder="Search Characters" value="" />
+          <Input
+            type="text"
+            placeholder="Search Characters"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </InputWrapper>
 
         <ThemeModeContainer>
