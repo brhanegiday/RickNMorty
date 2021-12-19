@@ -7,6 +7,7 @@ export const characters = [
     characterName: "Rick Sanchez",
     origin: "Earth (C-137)",
     species: "Human",
+    likes: false,
   },
   {
     id: uuidv4(),
@@ -14,6 +15,7 @@ export const characters = [
     characterName: "Rick Sanchez",
     origin: "Earth (C-137)",
     species: "Human",
+    likes: false,
   },
   {
     id: uuidv4(),
@@ -21,6 +23,7 @@ export const characters = [
     characterName: "Rick Sanchez",
     origin: "Earth (C-137)",
     species: "Human",
+    likes: false,
   },
   {
     id: uuidv4(),
@@ -28,6 +31,7 @@ export const characters = [
     characterName: "Rick Sanchez",
     origin: "Earth (C-137)",
     species: "Human",
+    likes: false,
   },
   {
     id: uuidv4(),
@@ -35,6 +39,7 @@ export const characters = [
     characterName: "Rick Sanchez",
     origin: "Earth (C-137)",
     species: "Human",
+    likes: false,
   },
   {
     id: uuidv4(),
@@ -42,5 +47,6 @@ export const characters = [
     characterName: "Rick Sanchez",
     origin: "Earth (C-137)",
     species: "Human",
+    likes: false,
   },
 ];

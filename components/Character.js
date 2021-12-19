@@ -1,7 +1,7 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BsArrowRightShort } from "react-icons/bs";
 
 const Wrapper = styled.div`
@@ -56,7 +56,9 @@ const SpeciesText = styled.div`
   padding-top: 0.3rem;
 `;
 
-function Character({ character }) {
+function Character({ character, handleLikeButton, handleUnLikeButton }) {
+  const [likeButton, setLikeButton] = useState(false);
+
   return (
     <Wrapper>
       <Image
@@ -69,7 +71,25 @@ function Character({ character }) {
       <div>
         <LeftItem>
           <CharacterName>{character.characterName}</CharacterName>
-          <AiOutlineHeart style={{ cursor: "pointer", color: "#333" }} />
+          <div onClick={() => setLikeButton((val) => !val)}>
+            {likeButton ? (
+              <AiFillHeart
+                onClick={() => handleLikeButton(character.id)}
+                style={{
+                  cursor: "pointer",
+                  color: "#dcf84a",
+                }}
+              />
+            ) : (
+              <AiOutlineHeart
+                onClick={() => handleUnLikeButton(character.id)}
+                style={{
+                  cursor: "pointer",
+                  color: "#333",
+                }}
+              />
+            )}
+          </div>
         </LeftItem>
         <MiddleItem>
           <div>
@@ -85,7 +105,7 @@ function Character({ character }) {
           <div></div>
           <Button>
             <div style={{ fontSize: "0.7rem" }}> See Episods</div>{" "}
-            <BsArrowRightShort style={{ fontSize: "1.3rem" }} />{" "}
+            <BsArrowRightShort style={{ fontSize: "1.3rem" }} />
           </Button>
         </RightItem>
       </div>
